@@ -1,8 +1,8 @@
 {
   "name": "@egjs/infinitegrid",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.2",
   "main": "dist/infinitegrid.js",
-  "module": "src/InfiniteGrid.js",
+  "module": "dist/infinitegrid.js",
   "es2015": "src/InfiniteGrid.js",
   "scripts": {
     "start": "webpack-dev-server --open",
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/naver/egjs-infinitegrid",
   "license": "MIT <https://naver.github.io/egjs/license.txt>",
   "dependencies": {
-    "@egjs/component": "github:naver/egjs-component"
+    "@egjs/component": "^2.0.0-rc.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",

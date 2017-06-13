@@ -10,7 +10,7 @@ var config = {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "[name].js",
-		library: ["eg", "InfiniteGrid"],
+		library: [pkg.namespace.eg, "InfiniteGrid"],
 		libraryTarget: "umd",
 		umdNamedDefine: true
 	},
@@ -19,7 +19,7 @@ var config = {
 			commonjs: "@egjs/component",
 			commonjs2: "@egjs/component",
 			amd: "@egjs/component",
-			root: ["eg", "Component"]
+			root: [pkg.namespace.eg, "Component"]
 		}
 	}],
 	devtool: "cheap-module-source-map",

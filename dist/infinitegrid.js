@@ -154,7 +154,7 @@ var utils = {
 		} else if (param.nodeName && param.nodeType === 1) {
 			// HTMLElement
 			el = param;
-		} else if (_browser.window.jQuery && param instanceof jQuery) {
+		} else if (_browser.window.jQuery && param instanceof jQuery || param.constructor.prototype.jquery) {
 			// jQuery
 			el = multi ? param.toArray() : param.get(0);
 		} else if (Array.isArray(param)) {

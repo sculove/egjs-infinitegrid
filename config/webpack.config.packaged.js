@@ -12,7 +12,7 @@ var config = {
 	externals: [],
     plugins: [
         new UglifyJSPlugin(uglifyConfig),
-		new webpack.BannerPlugin(banner.pkgd)
+		new webpack.BannerPlugin([banner.common, "", banner.pkgd].join("\r\n"))
     ]
 };
 

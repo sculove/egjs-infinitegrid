@@ -1,7 +1,8 @@
 ### Browser support
-IE 8+ (possibly 9 also), latest of Chrome/FF/Safari, iOS 7+ and Android 2.1+ (except 3.x)
+IE 10+, latest of Chrome/FF/Safari, iOS 7+ and Android 2.3+ (except 3.x)
 
 ### Quick steps to use:
+
 
 #### Set up your HTML
 
@@ -31,10 +32,14 @@ IE 8+ (possibly 9 also), latest of Chrome/FF/Safari, iOS 7+ and Android 2.1+ (ex
 
 #### Load files or import library
 
+
 ##### ES5
-```html
-<script src="http://naver.github.io/egjs-infinitegrid/dist/infinitegrid.pkgd.min.js"></script>
+``` html
+{% for dist in site.data.egjs.dist %}
+<script src="//{{ site.data.egjs.github.user }}.github.io/{{ site.data.egjs.github.repo }}/{{ dist }}"></script>
+{% endfor %}
 ```
+
 
 ##### ES6+
 ```js
@@ -50,8 +55,7 @@ new eg.InfiniteGrid("#grid");
 
 // create InfiniteGrid ui with options
 new eg.InfiniteGrid("#grid",{
-  itemSelector: ".item",
-  count: -1
+  itemSelector: ".item"
 });
 ```
 
@@ -62,7 +66,6 @@ new InfiniteGrid("#grid");
 
 // create InfiniteGrid ui with options
 new InfiniteGrid("#grid",{
-  itemSelector: ".item",
-  count: -1
+  itemSelector: ".item"
 });
 ```

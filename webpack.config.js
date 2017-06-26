@@ -24,8 +24,7 @@ var config = {
 	}],
 	devtool: "cheap-module-source-map",
 	module: {
-		rules: [
-			{
+		rules: [{
 				test: /(\.js)$/,
 				exclude: /(node_modules)/,
 				loader: "babel-loader",
@@ -33,22 +32,20 @@ var config = {
 			{
 				test: /(\.js)$/,
 				loader: StringReplacePlugin.replace({
-					replacements: [
-						{
-							pattern: /#__VERSION__#/ig,
-							replacement: function (match, p1, offset, string) {
-								return pkg.version;
-							}
+					replacements: [{
+						pattern: /#__VERSION__#/ig,
+						replacement: function (match, p1, offset, string) {
+							return pkg.version;
 						}
-					]}
-				)
-            }
+					}]
+				})
+			}
 		]
 	},
 	plugins: [new StringReplacePlugin()]
 };
 
-module.exports = function(env) {
+module.exports = function (env) {
 	env = env || "development";
 	return require("./config/webpack.config." + env + ".js")(config);
 };

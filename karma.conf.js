@@ -9,8 +9,6 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './node_modules/phantomjs-polyfill/bind-polyfill.js',
-      './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
       './node_modules/lite-fixture/index.js',
       './test/**/*.spec.js'
     ],
@@ -41,14 +39,14 @@ module.exports = function(config) {
     },
 
     browsers: [],
-    
+    colors: true,
     reporters: ['mocha'],
     webpackMiddleware: {
         noInfo: true
     },
   };
   
-  karmaConfig.browsers.push(config.chrome ? "Chrome" : "PhantomJS");
+  karmaConfig.browsers.push(config.chrome ? "Chrome" : "ChromeHeadless");
 
   if(config.coverage) {
     karmaConfig.reporters.push('coverage-istanbul');
